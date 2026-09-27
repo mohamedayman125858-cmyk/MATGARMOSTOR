@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* خلفية داكنة فخمة مودرن */
+    color: #f8fafc;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* هيدر بتدرج لوني فخم */
+.luxury-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #fff;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246,.3);
+    margin-bottom: 30px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.luxury-header h1 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.luxury-header p {
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* شبكة المنتجات: مربعين فقط في العرض */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+/* كارت المنتج بتصميم نار مع أنيميشن */
+.product-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    /* أنيميشن ناعم وسلس عند التحويم */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثير النيران والحركة عند الوقوف على الكرت */
+.product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #3b82f6;
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.25), 0 10px 10px -5px rgba(59, 130, 246, 0.1);
+}
+
+/* مكان الصورة مع تأثير زووم خفيف */
+.product-image {
+    width: 100%;
+    height: 150px;
+    background-color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1); /* تكبير الصورة برقة عند اللمس */
+}
+
+/* عنوان المنتج */
+.product-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #e2e8f0;
+    text-align: right;
+    height: 40px;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+/* السعر بشكل فخم ومميز */
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+/* زر شراء صغير فخم */
+.buy-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.buy-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
