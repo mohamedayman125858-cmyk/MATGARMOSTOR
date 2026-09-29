@@ -3,11 +3,11 @@
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
-    scroll-behavior: smooth; /* لتحريك سلس عند الضغط على الروابط */
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0f172a; /* خلفية داكنة فخمة مودرن */
+    background-color: #0f172a;
     color: #f8fafc;
     min-height: 100vh;
     padding-bottom: 40px;
@@ -28,6 +28,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-logo {
@@ -54,6 +60,34 @@ body {
 
 .nav-links a:hover, .nav-links a.active {
     color: #38bdf8;
+}
+
+/* زر السلة في الناف بار */
+.cart-icon-btn {
+    background: #1e293b;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    padding: 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cart-icon-btn:hover {
+    background: #3b82f6;
+}
+
+.cart-count {
+    background: #ef4444;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%;
 }
 
 /* هيدر بتدرج لوني فخم */
@@ -94,7 +128,7 @@ body {
     gap: 18px;
 }
 
-/* كارت المنتج بتصميم نار مع أنيميشن */
+/* كارت المنتج بتصميم فخم مع أنيميشن */
 .product-card {
     background: #1e293b;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -130,7 +164,7 @@ body {
 .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* التعديل هنا: لتغطية المربع بالكامل بشكل احترافي */
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
@@ -157,7 +191,7 @@ body {
 }
 
 .product-price {
-    font-size: 16px;
+    font-size: 15px;
     color: #38bdf8;
     font-weight: 700;
 }
@@ -171,7 +205,155 @@ body {
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.buy-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.buy-btn:active {
+    transform: scale(0.95);
+}
+
+/* --- سلة المشتريات الجانبية (Cart Drawer) --- */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: none;
+}
+
+.cart-overlay.active {
+    display: block;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    left: -380px;
+    width: 350px;
+    height: 100%;
+    background: #1e293b;
+    z-index: 2100;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    transition: left 0.4s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cart-drawer.active {
+    left: 0;
+}
+
+.cart-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h3 {
+    font-size: 18px;
+    color: #f8fafc;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-items {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cart-item-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cart-item-info img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.cart-item-details h4 {
+    font-size: 12px;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+}
+
+.cart-item-details p {
+    font-size: 12px;
+    color: #38bdf8;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #172033;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #f8fafc;
+}
+
+.whatsapp-checkout-btn {
+    width: 100%;
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
     transition: background 0.3s;
+}
+
+.whatsapp-checkout-btn:hover {
+    background: #16a34a;
 }
 
 /* --- تنسيقات الفوتر --- */
@@ -221,4 +403,17 @@ body {
 .copyrights {
     font-size: 12px;
     color: #64748b;
+}
+
+/* --- تصميم الدائرة المتحركة (الأنيميشن المتوجه للسلة) --- */
+.flying-circle {
+    position: fixed;
+    width: 22px;
+    height: 22px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 12px #38bdf8;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
 }
