@@ -108,19 +108,19 @@ function renderProducts() {
     `).join('');
 }
 
-// إضافة منتج للسلة مع تشغيل تأثير الأنيميشن المتجه للسلة
+// إضافة منتج للسلة مع تشغيل تأثير الأنيميشن المتجه للسلة (بدون فتح السلة تلقائياً)
 function addToCart(productId, event) {
     const product = productsData.find(p => p.id === productId);
     if (!product) return;
 
-    // تشغيل الأنيميشن للدائرة المتحركة
+    // تشغيل الأنيميشن للدائرة المتحركة نحو أيقونة السلة واهتزازها فقط
     playFlyingAnimation(event.target);
 
     cart.push(product);
     updateCartUI();
 }
 
-// دالة أنيميشن الدائرة المتحركة نحية أيقونة السلة
+// دالة أنيميشن الدائرة المتحركة نحية أيقونة السلة (بدون فتح السلة)
 function playFlyingAnimation(buttonElement) {
     const cartIconBtn = document.getElementById('cartIconBtn');
     
@@ -145,18 +145,15 @@ function playFlyingAnimation(buttonElement) {
         flyingCircle.style.opacity = '0.4';
     }, 40);
 
-    // إزالة الدائرة عند الوصول واهتزاز أيقونة السلة وفتح السلة تلقائياً
+    // إزالة الدائرة عند الوصول واهتزاز أيقونة السلة (تم إلغاء فتح السلة تلقائياً بناءً على طلبك)
     setTimeout(() => {
         flyingCircle.remove();
 
-        // اهتزاز وتكبير بسيط لأيقونة السلة
+        // اهتزاز وتكبير بسيط لأيقونة السلة لتنبيه المستخدم بزيادة العدّاد
         cartIconBtn.style.transform = 'scale(1.25)';
         setTimeout(() => {
             cartIconBtn.style.transform = 'scale(1)';
         }, 200);
-
-        // فتح السلة تلقائياً بعد انتهاء الأنيميشن
-        toggleCart(true);
 
     }, 740);
 }
@@ -203,7 +200,7 @@ function updateCartUI() {
     cartTotalPrice.textContent = total + " ج.م";
 }
 
-// فتح وإغلاق السلة الجانبية
+// فتح وإغلاق السلة الجانبية (تعمل عند الضغط على أيقونة السلة فقط)
 function toggleCart(open) {
     const cartDrawer = document.getElementById('cartDrawer');
     const cartOverlay = document.getElementById('cartOverlay');
