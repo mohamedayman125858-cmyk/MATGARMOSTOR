@@ -3,17 +3,16 @@
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
-    scroll-behavior: smooth; /* لتحريك سلس عند الضغط على الروابط */
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0f172a; /* خلفية داكنة فخمة مودرن */
+    background-color: #0f172a;
     color: #f8fafc;
     min-height: 100vh;
     padding-bottom: 40px;
 }
 
-/* --- تنسيقات الناف بار الفخمة --- */
 .luxury-navbar {
     background: rgba(30, 41, 59, 0.9);
     backdrop-filter: blur(10px);
@@ -56,7 +55,6 @@ body {
     color: #38bdf8;
 }
 
-/* هيدر بتدرج لوني فخم */
 .luxury-header {
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     color: #fff;
@@ -87,14 +85,12 @@ body {
     padding: 0 15px;
 }
 
-/* شبكة المنتجات: مربعين فقط في العرض */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
 }
 
-/* كارت المنتج بتصميم نار مع أنيميشن */
 .product-card {
     background: #1e293b;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -174,7 +170,6 @@ body {
     transition: background 0.3s;
 }
 
-/* --- تنسيقات الفوتر --- */
 .luxury-footer {
     background: #1e293b;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
