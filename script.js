@@ -2,33 +2,33 @@
 const productsData = [
     {
         id: 1,
-        title: "سماعات ألعاب احترافية RGB إضاءة ليد",
+        title: "سبحه الاكترونيه",
         price: "1500 ج.م",
-        image: "" // ضع رابط الصورة هنا
+        image: "https://cdn.phototourl.com/member/2026-09-29-9b1a1102-590c-4e5c-82e1-22de73b49448.jpg" // ضع رابط الصورة هنا
     },
     {
         id: 2,
-        title: "ساعة إلكترونية ذكية حديثة بشاشة أموليد",
+        title: "     فانوس رمضان ",
         price: "2300 ج.م",
-        image: "" // ضع رابط الصورة هنا
+        image: "https://cdn.phototourl.com/member/2026-09-29-e0c2a94a-4596-4d00-b18e-555ebc4d3c77.jpg" // ضع رابط الصورة هنا
     },
     {
         id: 3,
-        title: "ماوس لاسلكي للألعاب بتصميم مريح جداً",
+        title: " ساعه كلاسيك   ",
         price: "950 ج.م",
-        image: "" // ضع رابط الصورة هنا
+        image: "https://cdn.phototourl.com/member/2026-09-29-e64911aa-6404-464d-99f1-a5d95dd29605.jpg" // ضع رابط الصورة هنا
     },
     {
         id: 4,
-        title: "كيبورد ميكانيكي مخصص للاعبين والمحترفين",
+        title: "مكعب روبيك     ",
         price: "4200 ج.م",
-        image: "" // ضع رابط الصورة هنا
+        image: "https://cdn.phototourl.com/member/2026-09-29-a6d59a8f-9ca0-4703-8782-0873c8f7d3d8.jpg" // ضع رابط الصورة هنا
     },
     {
         id: 5,
-        title: "شاحن جداري سريع بتقنية النانو والبي دي",
+        title: "سماعه اير بودز",
         price: "650 ج.م",
-        image: "" // ضع رابط الصورة هنا
+        image: "https://cdn.phototourl.com/member/2026-09-29-6d3a9931-6517-4ae4-a3d4-28465b2641f1.jpg" // ضع رابط الصورة هنا
     },
     {
         id: 6,
