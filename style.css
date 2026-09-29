@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth; /* لتحريك سلس عند الضغط على الروابط */
 }
 
 body {
@@ -10,6 +11,49 @@ body {
     color: #f8fafc;
     min-height: 100vh;
     padding-bottom: 40px;
+}
+
+/* --- تنسيقات الناف بار الفخمة --- */
+.luxury-navbar {
+    background: rgba(30, 41, 59, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: 900;
+    color: #38bdf8;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #38bdf8;
 }
 
 /* هيدر بتدرج لوني فخم */
@@ -61,19 +105,16 @@ body {
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-    /* أنيميشن ناعم وسلس عند التحويم */
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* تأثير النيران والحركة عند الوقوف على الكرت */
 .product-card:hover {
     transform: translateY(-8px) scale(1.02);
     border-color: #3b82f6;
     box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.25), 0 10px 10px -5px rgba(59, 130, 246, 0.1);
 }
 
-/* مكان الصورة مع تأثير زووم خفيف */
 .product-image {
     width: 100%;
     height: 150px;
@@ -94,10 +135,9 @@ body {
 }
 
 .product-card:hover .product-image img {
-    transform: scale(1.1); /* تكبير الصورة برقة عند اللمس */
+    transform: scale(1.1);
 }
 
-/* عنوان المنتج */
 .product-title {
     font-size: 13px;
     font-weight: 600;
@@ -109,7 +149,6 @@ body {
     line-height: 1.4;
 }
 
-/* السعر بشكل فخم ومميز */
 .product-footer {
     display: flex;
     justify-content: space-between;
@@ -123,7 +162,6 @@ body {
     font-weight: 700;
 }
 
-/* زر شراء صغير فخم */
 .buy-btn {
     background: linear-gradient(135deg, #3b82f6, #2563eb);
     color: white;
@@ -136,6 +174,51 @@ body {
     transition: background 0.3s;
 }
 
-.buy-btn:hover {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+/* --- تنسيقات الفوتر --- */
+.luxury-footer {
+    background: #1e293b;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 40px;
+    padding: 25px 15px;
+    text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.luxury-footer h3 {
+    font-size: 15px;
+    color: #e2e8f0;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.contact-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.contact-item {
+    background: #0f172a;
+    color: #38bdf8;
+    padding: 8px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #3b82f6;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.copyrights {
+    font-size: 12px;
+    color: #64748b;
 }
