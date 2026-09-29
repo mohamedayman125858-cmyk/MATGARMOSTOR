@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MO.stor</title>
+    <title>AL TAWOOS</title>
     <link rel="stylesheet" href="style.css">
-    <!-- خط تجوال العصري من جوجل فونتس لزيادة الفخامة -->
+    <!-- خط تجوال العصري من جوجل فونتس -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ناف بار فخم وعصري -->
+    <!-- ناف بار فخم وعصري مع زر السلة -->
     <nav class="luxury-navbar">
         <div class="nav-container container">
             <a href="#" class="nav-logo">AL TAWOOS</a>
-            <ul class="nav-links">
-                <li><a href="#" class="active">الرئيسية</a></li>
-                <li><a href="#productsGrid">المنتجات</a></li>
-                <li><a href="#footer-contact">تواصل معنا</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#" class="active">الرئيسية</a></li>
+                    <li><a href="#productsGrid">المنتجات</a></li>
+                    <li><a href="#footer-contact">تواصل معنا</a></li>
+                </ul>
+                <!-- أيقونة سلة التسوق -->
+                <div class="cart-icon-btn" id="cartIconBtn">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -37,6 +43,25 @@
             <!-- سيتم تعبئة المنتجات تلقائياً من الجافاسكريبت -->
         </div>
     </main>
+
+    <!-- سلة التسوق الجانبية (Drawer) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- المنتجات المضافة ستظهر هنا -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>الإجمالي:</span>
+                <span id="cartTotalPrice">0 ج.م</span>
+            </div>
+            <button class="whatsapp-checkout-btn" id="whatsappCheckoutBtn">إتمام الطلب عبر الواتساب 📱</button>
+        </div>
+    </div>
 
     <!-- الفوتر المخصص لأرقام التواصل -->
     <footer class="luxury-footer" id="footer-contact">
